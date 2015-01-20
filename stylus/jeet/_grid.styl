@@ -45,7 +45,9 @@ column(ratios = 1, offset = 0, cycle = 0, uncycle = 0, gutter = jeet.gutter)
     &:nth-of-type({cycle}n+1)
       clear: both
    else
-    &:last-child, &.last-child
+    &:last-child
+      margin-{opposite-side}: (margin-last)%
+    &.last-child
       margin-{opposite-side}: (margin-last)%
 
 /**
@@ -212,7 +214,10 @@ stack(pad = 0, align = false)
   &:first-child
     margin-{side}: auto
 
-  &:last-child, &.last-child
+  &:last-child
+    margin-{opposite-side}: auto
+
+  &.last-child
     margin-{opposite-side}: auto
 
   if pad != 0
@@ -244,7 +249,10 @@ unstack()
   &:first-child
     margin-{side}: 0
 
-  &:last-child, &.last-child
+  &:last-child
+    margin-{opposite-side}: 0
+
+  &.last-child
     margin-{opposite-side}: 0
 
 /**
